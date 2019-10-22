@@ -12,7 +12,7 @@ body{
 }
 ul{
     padding: 0;
-    margin: 0;
+    margin-top: 10px;
 }
 .button_1{
     height: 33px;
@@ -21,6 +21,13 @@ ul{
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+}
+.dark{
+    background: dimgray;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
 }
 /* Header */
 header{
@@ -37,7 +44,7 @@ header a{
 header li{
     float: left;
     display: inline;
-    padding: 0 20px 0 20px;
+    padding: 0px 20px 0 20px;
 }
 header #branding{
     float: left;
@@ -56,10 +63,9 @@ header a:hover{
 /* Showcase */
 #showcase{
     min-height: 400px;
-    background: url(../img/main.jpg) no-repeat 0 -200px;
+    background: url(../img/main.jpg) no-repeat  0 -200px;
     text-align: center;
-    color: white;
-    
+    color: white;   
 }
 #showcase h1{
     font-size: 40px;
@@ -102,6 +108,30 @@ header a:hover{
     width: 250px;
     height: 150px;
 }
+/*Sidebar*/
+#sidebar{
+    float: right;
+    margin-top: 10px;
+    width: 30%;
+
+}
+/*Main-Col*/
+#main-col{
+    float: left;
+    width: 65%;
+}
+/*Services*/
+#services li{
+    background: silver;
+    padding: 20px;
+    border: #cccccc solid 1px;
+    margin-bottom: 5px;
+    list-style: none;
+}
+#sidebar .quote input, #sidebar .quote textarea{
+    width: 90%;
+    padding: 5px;
+}
 footer{
     color: white;
     background: salmon;
@@ -109,4 +139,12 @@ footer{
     margin-bottom: 0px;
     text-align: center;
     padding: 10px;
+}
+/*Media Queries*/
+@media(max-width:768px){
+    header #branding,header nav, header li{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
 }

@@ -40,19 +40,30 @@ header a{
     color:white;
     text-decoration: none;
     font-size: 16px;
+    
+}
+header nav{
+    float:right;
 }
 header li{
     float: left;
     display: inline;
-    padding: 0px 20px 0 20px;
+    padding: 10px 20px 0 20px;
 }
 header #branding{
     float: left;
 }
 header #branding h1{
     margin: 0;
+    padding-top: 10px;
 }
-header .highlight, header .current a{
+header .highlight{
+    color: salmon;
+    font-family:'Audiowide';
+    padding-right: 10px;
+      
+}
+header .current a{
     color: salmon;
     font-weight: bold;   
 }
@@ -65,7 +76,8 @@ header a:hover{
     min-height: 400px;
     background: url(../img/main.jpg) no-repeat  0 -200px;
     text-align: center;
-    color: white;   
+    color: white;
+    border-bottom: rgb(135, 191, 236) solid 3px;  
 }
 #showcase h1{
     font-size: 40px;

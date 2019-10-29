@@ -11,13 +11,11 @@ body{
     width:80%;
     margin: auto;
     overflow: hidden;
-    background-color: cadetblue;
 }
 .flexcontainer{
     width:80%;
     margin: auto;
     overflow: hidden;
-    background-color: goldenrod;
     display: flex;
     flex-direction: row;
     justify-content:space-between;

@@ -120,7 +120,9 @@ header a:hover{
 /* Showcase */
 #showcase{
     min-height: 400px;
-    background: url(../img/main.jpg) no-repeat  0 -200px ;
+    background: url(../img/main.jpg) no-repeat 0 -200px ;
+    background-position: center;
+    background-size: cover;
     text-align: center;
     color: white; 
     animation: bcolor 5s infinite;
@@ -209,10 +211,11 @@ footer{
 }
 /*Media Queries*/
 @media(max-width:768px){
-    header #branding,header nav, header li, #boxes .box, #newsletter h1{
+    header #branding,header nav, header li, #boxes .box, #newsletter h1, header .flexcontainer{
         float: none;
         text-align: center;
         width: 100%;
         line-height: 1;
+        flex-direction: column;
     }
 }

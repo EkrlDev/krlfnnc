@@ -1,18 +1,31 @@
+
 body{
     font:15px/1.5 Arial,Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-    background-color:lightgrey;
+    background-color:#F9F7F7;
+    --baslik:salmon;
 }
 /* Global */
 .container{
     width:80%;
     margin: auto;
     overflow: hidden;
+    background-color: cadetblue;
+}
+.flexcontainer{
+    width:80%;
+    margin: auto;
+    overflow: hidden;
+    background-color: goldenrod;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
 }
 ul{
     padding: 0;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .button_1{
     height: 33px;
@@ -21,20 +34,57 @@ ul{
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+.button_1:hover{
+    transform: scale(1.05);
+    animation-name: background-color;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes background-color {
+    100% {background-color: #4791d0;}
+}
+.button_2{
+    height: 33px;
+    background:salmon;
+    border: 0px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.button_2:hover{
+    transform: skewx(15deg);
 }
 .dark{
-    background: dimgray;
+    background:#3f72af;
     color: white;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-right:15px;
     margin-bottom: 10px;
-    padding: 15px;
+    padding: 0px 15px 15px 15px;
+    border-radius: 5px;
+    box-shadow: -10px 10px 20px 5px #112d4e;
+}
+.dark:hover{
+    background-color:rgb(135, 191, 236);
+    color:black;
+}
+.title{
+    color:salmon;
+    background-color: blueviolet;
 }
 /* Header */
 header{
-    background: dimgray;
+    background: #112d4e;
     color:white;
     min-height: 70px;
-    border-bottom: rgb(135, 191, 236) solid 3px;
+    position: sticky;
+    top: 0px;
+    animation: bcolor 5s infinite;
 }
 header a{
     color:white;
@@ -42,11 +92,7 @@ header a{
     font-size: 16px;
     
 }
-header nav{
-    float:right;
-}
 header li{
-    float: left;
     display: inline;
     padding: 10px 20px 0 20px;
 }
@@ -64,7 +110,7 @@ header .highlight{
       
 }
 header .current a{
-    color: salmon;
+    color:var(--baslik, black);
     font-weight: bold;   
 }
 header a:hover{
@@ -74,10 +120,18 @@ header a:hover{
 /* Showcase */
 #showcase{
     min-height: 400px;
-    background: url(../img/main.jpg) no-repeat  0 -200px;
+    background: url(../img/main.jpg) no-repeat 0 -200px ;
+    background-position: center;
+    background-size: cover;
     text-align: center;
-    color: white;
-    border-bottom: rgb(135, 191, 236) solid 3px;  
+    color: white; 
+    animation: bcolor 5s infinite;
+}
+@keyframes bcolor {
+    0%{ border-bottom: #F9F7F7 solid 3px;}
+    25%{ border-bottom: rgb(135, 191, 236) solid 3px;}
+    50%{border-bottom: #3f72af solid 3px;}
+    100%{ border-bottom: #F9F7F7 solid 3px;}     
 }
 #showcase h1{
     font-size: 40px;
@@ -92,7 +146,7 @@ header a:hover{
 #newsletter{
     padding: 15px;
     color: white;
-    background: dimgray;
+    background: #112d4e;
 }
 #newsletter h1{
     float: left;
@@ -119,26 +173,29 @@ header a:hover{
 #boxes .box img{
     width: 250px;
     height: 150px;
+    border-radius: 15px;
 }
 /*Sidebar*/
 #sidebar{
     float: right;
-    margin-top: 10px;
     width: 30%;
-
+    text-align: justify;
+    
 }
 /*Main-Col*/
 #main-col{
     float: left;
     width: 65%;
+    text-align: justify;
 }
 /*Services*/
 #services li{
-    background: silver;
+    background: #dbe2ef;
     padding: 20px;
     border: #cccccc solid 1px;
     margin-bottom: 5px;
     list-style: none;
+    text-align: justify;
 }
 #sidebar .quote input, #sidebar .quote textarea{
     width: 90%;
@@ -154,9 +211,11 @@ footer{
 }
 /*Media Queries*/
 @media(max-width:768px){
-    header #branding,header nav, header li{
+    header #branding,header nav, header li, #boxes .box, #newsletter h1, header .flexcontainer{
         float: none;
         text-align: center;
         width: 100%;
+        line-height: 1;
+        flex-direction: column;
     }
 }
